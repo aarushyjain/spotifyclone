@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify Clone — Fixed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Spotify</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Your Library</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h2>Playlist</h2>
+      <p class="hint">Click a card to play. Use Space to Play/Pause, ← / → to change tracks.</p>
+      <div class="playlist" id="playlist"></div>
+    </div>
+  </div>
+
+  <!-- Audio player (bottom) -->
+  <div class="audio-player" id="audio-player">
+    <div class="player-info">
+      <img src="images/placeholder.png" alt="cover" id="song-img" onerror="this.src='images/placeholder.png'">
+      <div class="song-details">
+        <h3 id="song-title">No song selected</h3>
+        <p id="song-artist">—</p>
+      </div>
+    </div>
+
+    <!-- Progress bar will be injected by JS if missing -->
+    <div class="controls">
+      <button id="prev" aria-label="Previous">⟨</button>
+      <button id="play" class="play-btn">Play</button>
+      <button id="next" aria-label="Next">⟩</button>
+    </div>
+
+    <div class="player-actions">
+      <!-- optional future buttons -->
+    </div>
+  </div>
+
+  <!-- Keep a real <audio> element so the browser can manage autoplay/policies, debugging, and inspect network errors -->
+  <audio id="audio" preload="metadata"></audio>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
